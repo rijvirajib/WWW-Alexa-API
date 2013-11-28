@@ -33,6 +33,7 @@
       "runtime" : {
          "requires" : {
             "XML::Hash::LX" : "0.0603",
+            "LWP::UserAgent" : "6",
             "perl" : "5.006"
          }
       }

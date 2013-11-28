@@ -19,5 +19,6 @@ no_index:
     - inc
 requires:
   XML::Hash::LX: 0.0603
+  LWP::UserAgent: 6
   perl: 5.006
-version: 0.01
+version: 0.03

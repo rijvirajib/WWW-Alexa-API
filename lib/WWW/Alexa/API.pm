@@ -6,7 +6,7 @@ use warnings FATAL => 'all';
 use LWP::UserAgent;
 use XML::Hash::LX;
 
-our $VERSION = '0.01';
+our $VERSION = '0.03';
 
 sub new {
   my $class = shift;
@@ -44,7 +44,7 @@ WWW::Alexa::API - Query Alexa.com for Traffic information of website.
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 =head1 SYNOPSIS
 
