@@ -6,3 +6,4 @@ Changes
 Makefile.PL
 lib/WWW/Alexa/API.pm
 t/001_load.t
+scripts/example.pl
