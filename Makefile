@@ -1,7 +1,7 @@
 # This Makefile is for the WWW::Alexa::API extension to perl.
 #
 # It was generated automatically by MakeMaker version
-# 6.72 (Revision: 67200) from the contents of
+# 6.84 (Revision: 68400) from the contents of
 # Makefile.PL. Don't edit this file, edit Makefile.PL instead.
 #
 #       ANY CHANGES MADE HERE WILL BE LOST!
@@ -11,58 +11,49 @@
 
 #   MakeMaker Parameters:
 
-#     ABSTRACT_FROM => q[lib/WWW/Alexa/API.pm]
-#     AUTHOR => [q[Rijvi Rajib <me@rij.co>]]
-#     BUILD_REQUIRES => { Test::More=>q[0] }
-#     CONFIGURE_REQUIRES => { ExtUtils::MakeMaker=>q[0] }
-#     LICENSE => q[Artistic_2_0]
-#     MIN_PERL_VERSION => q[5.006]
+#     ABSTRACT => q[A class implementation interface for querying Alexa.com for Traffic information.]
+#     AUTHOR => [q[Rijvi Rajib (cpan@rij.co)]]
+#     BUILD_REQUIRES => {  }
+#     CONFIGURE_REQUIRES => {  }
 #     NAME => q[WWW::Alexa::API]
-#     PL_FILES => {  }
-#     PREREQ_PM => { Test::More=>q[0], XML::Hash::LX=>q[0.0603] }
+#     PREREQ_PM => { LWP::UserAgent=>q[6], XML::Hash::LX=>q[0.0603], Test::Simple=>q[0.44] }
 #     TEST_REQUIRES => {  }
 #     VERSION_FROM => q[lib/WWW/Alexa/API.pm]
-#     clean => { FILES=>q[WWW-Alexa-API-*] }
-#     dist => { COMPRESS=>q[gzip -9f], SUFFIX=>q[gz] }
 
 # --- MakeMaker post_initialize section:
 
 
 # --- MakeMaker const_config section:
 
-# These definitions are from config.sh (via C:/Perl/perl/lib/Config.pm).
+# These definitions are from config.sh (via /usr/lib/perl/5.14/Config.pm).
 # They may have been overridden via Makefile.PL or on the command line.
 AR = ar
-CC = gcc
-CCCDLFLAGS =  
-CCDLFLAGS =  
-DLEXT = dll
-DLSRC = dl_win32.xs
-EXE_EXT = .exe
-FULL_AR = 
-LD = g++
-LDDLFLAGS = -mdll -s -L"C:\Perl\perl\lib\CORE" -L"C:\Perl\c\lib"
-LDFLAGS = -s -L"C:\Perl\perl\lib\CORE" -L"C:\Perl\c\lib"
+CC = cc
+CCCDLFLAGS = -fPIC
+CCDLFLAGS = -Wl,-E
+DLEXT = so
+DLSRC = dl_dlopen.xs
+EXE_EXT = 
+FULL_AR = /usr/bin/ar
+LD = cc
+LDDLFLAGS = -shared -L/usr/local/lib -fstack-protector
+LDFLAGS =  -fstack-protector -L/usr/local/lib
 LIBC = 
 LIB_EXT = .a
 OBJ_EXT = .o
-OSNAME = MSWin32
-OSVERS = 4.0
-RANLIB = rem
-SITELIBEXP = C:\Perl\perl\site\lib
-SITEARCHEXP = C:\Perl\perl\site\lib
-SO = dll
-VENDORARCHEXP = C:\Perl\perl\vendor\lib
-VENDORLIBEXP = C:\Perl\perl\vendor\lib
+OSNAME = linux
+OSVERS = 3.2.0-37-generic
+RANLIB = :
+SITELIBEXP = /usr/local/share/perl/5.14.2
+SITEARCHEXP = /usr/local/lib/perl/5.14.2
+SO = so
+VENDORARCHEXP = /usr/lib/perl5
+VENDORLIBEXP = /usr/share/perl5
 
 
 # --- MakeMaker constants section:
-
-# Get dmake to read long commands like PM_TO_BLIB
-MAXLINELENGTH = 800000
-
 AR_STATIC_ARGS = cr
-DIRFILESEP = \\
+DIRFILESEP = /
 DFSEP = $(DIRFILESEP)
 NAME = WWW::Alexa::API
 NAME_SYM = WWW_Alexa_API
@@ -73,66 +64,66 @@ DEFINE_VERSION = -D$(VERSION_MACRO)=\"$(VERSION)\"
 XS_VERSION = 0.01
 XS_VERSION_MACRO = XS_VERSION
 XS_DEFINE_VERSION = -D$(XS_VERSION_MACRO)=\"$(XS_VERSION)\"
-INST_ARCHLIB = blib\arch
-INST_SCRIPT = blib\script
-INST_BIN = blib\bin
-INST_LIB = blib\lib
-INST_MAN1DIR = blib\man1
-INST_MAN3DIR = blib\man3
-MAN1EXT = 1
-MAN3EXT = 3
+INST_ARCHLIB = blib/arch
+INST_SCRIPT = blib/script
+INST_BIN = blib/bin
+INST_LIB = blib/lib
+INST_MAN1DIR = blib/man1
+INST_MAN3DIR = blib/man3
+MAN1EXT = 1p
+MAN3EXT = 3pm
 INSTALLDIRS = site
 DESTDIR = 
 PREFIX = $(SITEPREFIX)
-PERLPREFIX = C:\Perl\perl
-SITEPREFIX = C:\Perl\perl\site
-VENDORPREFIX = C:\Perl\perl\vendor
-INSTALLPRIVLIB = C:\Perl\perl\lib
+PERLPREFIX = /usr
+SITEPREFIX = /usr/local
+VENDORPREFIX = /usr
+INSTALLPRIVLIB = /usr/share/perl/5.14
 DESTINSTALLPRIVLIB = $(DESTDIR)$(INSTALLPRIVLIB)
-INSTALLSITELIB = C:\Perl\perl\site\lib
+INSTALLSITELIB = /usr/local/share/perl/5.14.2
 DESTINSTALLSITELIB = $(DESTDIR)$(INSTALLSITELIB)
-INSTALLVENDORLIB = C:\Perl\perl\vendor\lib
+INSTALLVENDORLIB = /usr/share/perl5
 DESTINSTALLVENDORLIB = $(DESTDIR)$(INSTALLVENDORLIB)
-INSTALLARCHLIB = C:\Perl\perl\lib
+INSTALLARCHLIB = /usr/lib/perl/5.14
 DESTINSTALLARCHLIB = $(DESTDIR)$(INSTALLARCHLIB)
-INSTALLSITEARCH = C:\Perl\perl\site\lib
+INSTALLSITEARCH = /usr/local/lib/perl/5.14.2
 DESTINSTALLSITEARCH = $(DESTDIR)$(INSTALLSITEARCH)
-INSTALLVENDORARCH = C:\Perl\perl\vendor\lib
+INSTALLVENDORARCH = /usr/lib/perl5
 DESTINSTALLVENDORARCH = $(DESTDIR)$(INSTALLVENDORARCH)
-INSTALLBIN = C:\Perl\perl\bin
+INSTALLBIN = /usr/bin
 DESTINSTALLBIN = $(DESTDIR)$(INSTALLBIN)
-INSTALLSITEBIN = C:\Perl\perl\site\bin
+INSTALLSITEBIN = /usr/local/bin
 DESTINSTALLSITEBIN = $(DESTDIR)$(INSTALLSITEBIN)
-INSTALLVENDORBIN = C:\Perl\perl\bin
+INSTALLVENDORBIN = /usr/bin
 DESTINSTALLVENDORBIN = $(DESTDIR)$(INSTALLVENDORBIN)
-INSTALLSCRIPT = C:\Perl\perl\bin
+INSTALLSCRIPT = /usr/bin
 DESTINSTALLSCRIPT = $(DESTDIR)$(INSTALLSCRIPT)
-INSTALLSITESCRIPT = C:\Perl\perl\site\bin
+INSTALLSITESCRIPT = /usr/local/bin
 DESTINSTALLSITESCRIPT = $(DESTDIR)$(INSTALLSITESCRIPT)
-INSTALLVENDORSCRIPT = C:\Perl\perl\bin
+INSTALLVENDORSCRIPT = /usr/bin
 DESTINSTALLVENDORSCRIPT = $(DESTDIR)$(INSTALLVENDORSCRIPT)
-INSTALLMAN1DIR = none
+INSTALLMAN1DIR = /usr/share/man/man1
 DESTINSTALLMAN1DIR = $(DESTDIR)$(INSTALLMAN1DIR)
-INSTALLSITEMAN1DIR = $(INSTALLMAN1DIR)
+INSTALLSITEMAN1DIR = /usr/local/man/man1
 DESTINSTALLSITEMAN1DIR = $(DESTDIR)$(INSTALLSITEMAN1DIR)
-INSTALLVENDORMAN1DIR = $(INSTALLMAN1DIR)
+INSTALLVENDORMAN1DIR = /usr/share/man/man1
 DESTINSTALLVENDORMAN1DIR = $(DESTDIR)$(INSTALLVENDORMAN1DIR)
-INSTALLMAN3DIR = none
+INSTALLMAN3DIR = /usr/share/man/man3
 DESTINSTALLMAN3DIR = $(DESTDIR)$(INSTALLMAN3DIR)
-INSTALLSITEMAN3DIR = $(INSTALLMAN3DIR)
+INSTALLSITEMAN3DIR = /usr/local/man/man3
 DESTINSTALLSITEMAN3DIR = $(DESTDIR)$(INSTALLSITEMAN3DIR)
-INSTALLVENDORMAN3DIR = $(INSTALLMAN3DIR)
+INSTALLVENDORMAN3DIR = /usr/share/man/man3
 DESTINSTALLVENDORMAN3DIR = $(DESTDIR)$(INSTALLVENDORMAN3DIR)
-PERL_LIB = C:\Perl\perl\lib
-PERL_ARCHLIB = C:\Perl\perl\lib
+PERL_LIB = /usr/share/perl/5.14
+PERL_ARCHLIB = /usr/lib/perl/5.14
 LIBPERL_A = libperl.a
 FIRST_MAKEFILE = Makefile
 MAKEFILE_OLD = Makefile.old
 MAKE_APERL_FILE = Makefile.aperl
 PERLMAINCC = $(CC)
-PERL_INC = C:\Perl\perl\lib\CORE
-PERL = C:\Perl\perl\bin\perl.exe
-FULLPERL = C:\Perl\perl\bin\perl.exe
+PERL_INC = /usr/lib/perl/5.14/CORE
+PERL = /usr/bin/perl
+FULLPERL = /usr/bin/perl
 ABSPERL = $(PERL)
 PERLRUN = $(PERL)
 FULLPERLRUN = $(FULLPERL)
@@ -145,16 +136,16 @@ PERM_DIR = 755
 PERM_RW = 644
 PERM_RWX = 755
 
-MAKEMAKER   = C:/Perl/perl/lib/ExtUtils/MakeMaker.pm
-MM_VERSION  = 6.72
-MM_REVISION = 67200
+MAKEMAKER   = /usr/local/share/perl/5.14.2/ExtUtils/MakeMaker.pm
+MM_VERSION  = 6.84
+MM_REVISION = 68400
 
 # FULLEXT = Pathname for extension directory (eg Foo/Bar/Oracle).
 # BASEEXT = Basename part of FULLEXT. May be just equal FULLEXT. (eg Oracle)
 # PARENT_NAME = NAME without BASEEXT and no trailing :: (eg Foo::Bar)
 # DLBASE  = Basename part of dynamic library. May be just equal BASEEXT.
-MAKE = dmake
-FULLEXT = WWW\Alexa\API
+MAKE = make
+FULLEXT = WWW/Alexa/API
 BASEEXT = API
 PARENT_NAME = WWW::Alexa
 DLBASE = $(BASEEXT)
@@ -170,41 +161,42 @@ C_FILES  =
 O_FILES  = 
 H_FILES  = 
 MAN1PODS = 
-MAN3PODS = 
+MAN3PODS = lib/WWW/Alexa/API.pm
 
 # Where is the Config information that we are using/depend on
 CONFIGDEP = $(PERL_ARCHLIB)$(DFSEP)Config.pm $(PERL_INC)$(DFSEP)config.h
 
 # Where to build things
-INST_LIBDIR      = $(INST_LIB)\WWW\Alexa
-INST_ARCHLIBDIR  = $(INST_ARCHLIB)\WWW\Alexa
+INST_LIBDIR      = $(INST_LIB)/WWW/Alexa
+INST_ARCHLIBDIR  = $(INST_ARCHLIB)/WWW/Alexa
 
-INST_AUTODIR     = $(INST_LIB)\auto\$(FULLEXT)
-INST_ARCHAUTODIR = $(INST_ARCHLIB)\auto\$(FULLEXT)
+INST_AUTODIR     = $(INST_LIB)/auto/$(FULLEXT)
+INST_ARCHAUTODIR = $(INST_ARCHLIB)/auto/$(FULLEXT)
 
 INST_STATIC      = 
 INST_DYNAMIC     = 
 INST_BOOT        = 
 
 # Extra linker info
-EXPORT_LIST        = $(BASEEXT).def
-PERL_ARCHIVE       = $(PERL_INC)\libperl518.a
+EXPORT_LIST        = 
+PERL_ARCHIVE       = 
 PERL_ARCHIVE_AFTER = 
 
 
 TO_INST_PM = lib/WWW/Alexa/API.pm
 
 PM_TO_BLIB = lib/WWW/Alexa/API.pm \
-	blib\lib\WWW\Alexa\API.pm
+	blib/lib/WWW/Alexa/API.pm
 
 
 # --- MakeMaker platform_constants section:
-MM_Win32_VERSION = 6.72
+MM_Unix_VERSION = 6.84
+PERL_MALLOC_DEF = -DPERL_EXTMALLOC_DEF -Dmalloc=Perl_malloc -Dfree=Perl_mfree -Drealloc=Perl_realloc -Dcalloc=Perl_calloc
 
 
 # --- MakeMaker tool_autosplit section:
 # Usage: $(AUTOSPLITFILE) FileToSplit AutoDirToSplitInto
-AUTOSPLITFILE = $(ABSPERLRUN)  -e "use AutoSplit;  autosplit($$$$ARGV[0], $$$$ARGV[1], 0, 1, 1)" --
+AUTOSPLITFILE = $(ABSPERLRUN)  -e 'use AutoSplit;  autosplit($$$$ARGV[0], $$$$ARGV[1], 0, 1, 1)' --
 
 
 
@@ -212,33 +204,35 @@ AUTOSPLITFILE = $(ABSPERLRUN)  -e "use AutoSplit;  autosplit($$$$ARGV[0], $$$$AR
 
 
 # --- MakeMaker tools_other section:
-CHMOD = $(ABSPERLRUN) -MExtUtils::Command -e chmod --
-CP = $(ABSPERLRUN) -MExtUtils::Command -e cp --
-MV = $(ABSPERLRUN) -MExtUtils::Command -e mv --
-NOOP = rem
+SHELL = /bin/sh
+CHMOD = chmod
+CP = cp
+MV = mv
+NOOP = $(TRUE)
 NOECHO = @
-RM_F = $(ABSPERLRUN) -MExtUtils::Command -e rm_f --
-RM_RF = $(ABSPERLRUN) -MExtUtils::Command -e rm_rf --
-TEST_F = $(ABSPERLRUN) -MExtUtils::Command -e test_f --
-TOUCH = $(ABSPERLRUN) -MExtUtils::Command -e touch --
+RM_F = rm -f
+RM_RF = rm -rf
+TEST_F = test -f
+TOUCH = touch
 UMASK_NULL = umask 0
-DEV_NULL = > NUL
-MKPATH = $(ABSPERLRUN) -MExtUtils::Command -e mkpath --
-EQUALIZE_TIMESTAMP = $(ABSPERLRUN) -MExtUtils::Command -e eqtime --
-FALSE = $(ABSPERLRUN)  -e "exit 1" --
-TRUE = $(ABSPERLRUN)  -e "exit 0" --
-ECHO = $(ABSPERLRUN) -l -e "print qq{{@ARGV}}" --
-ECHO_N = $(ABSPERLRUN)  -e "print qq{{@ARGV}}" --
+DEV_NULL = > /dev/null 2>&1
+MKPATH = $(ABSPERLRUN) -MExtUtils::Command -e 'mkpath' --
+EQUALIZE_TIMESTAMP = $(ABSPERLRUN) -MExtUtils::Command -e 'eqtime' --
+FALSE = false
+TRUE = true
+ECHO = echo
+ECHO_N = echo -n
 UNINST = 0
 VERBINST = 0
-MOD_INSTALL = $(ABSPERLRUN) -MExtUtils::Install -e "install([ from_to => {{@ARGV}}, verbose => '$(VERBINST)', uninstall_shadows => '$(UNINST)', dir_mode => '$(PERM_DIR)' ]);" --
-DOC_INSTALL = $(ABSPERLRUN) -MExtUtils::Command::MM -e perllocal_install --
-UNINSTALL = $(ABSPERLRUN) -MExtUtils::Command::MM -e uninstall --
-WARN_IF_OLD_PACKLIST = $(ABSPERLRUN) -MExtUtils::Command::MM -e warn_if_old_packlist --
+MOD_INSTALL = $(ABSPERLRUN) -MExtUtils::Install -e 'install([ from_to => {@ARGV}, verbose => '\''$(VERBINST)'\'', uninstall_shadows => '\''$(UNINST)'\'', dir_mode => '\''$(PERM_DIR)'\'' ]);' --
+DOC_INSTALL = $(ABSPERLRUN) -MExtUtils::Command::MM -e 'perllocal_install' --
+UNINSTALL = $(ABSPERLRUN) -MExtUtils::Command::MM -e 'uninstall' --
+WARN_IF_OLD_PACKLIST = $(ABSPERLRUN) -MExtUtils::Command::MM -e 'warn_if_old_packlist' --
 MACROSTART = 
 MACROEND = 
 USEMAKEFILE = -f
-FIXIN = pl2bat.bat
+FIXIN = $(ABSPERLRUN) -MExtUtils::MY -e 'MY->fixin(shift)' --
+CP_NONEMPTY = $(ABSPERLRUN) -MExtUtils::Command::MM -e 'cp_nonempty' --
 
 
 # --- MakeMaker makemakerdflt section:
@@ -251,8 +245,8 @@ TAR = tar
 TARFLAGS = cvf
 ZIP = zip
 ZIPFLAGS = -r
-COMPRESS = gzip -9f
-SUFFIX = gz
+COMPRESS = gzip --best
+SUFFIX = .gz
 SHAR = shar
 PREOP = $(NOECHO) $(NOOP)
 POSTOP = $(NOECHO) $(NOOP)
@@ -284,14 +278,17 @@ DISTVNAME = WWW-Alexa-API-0.01
 
 
 # --- MakeMaker pasthru section:
-PASTHRU = 
+
+PASTHRU = LIBPERL_A="$(LIBPERL_A)"\
+	LINKTYPE="$(LINKTYPE)"\
+	PREFIX="$(PREFIX)"
+
 
 # --- MakeMaker special_targets section:
 .SUFFIXES : .xs .c .C .cpp .i .s .cxx .cc $(OBJ_EXT)
 
 .PHONY: all config static dynamic test linkext manifest blibdirs clean realclean disttest distdir
 
-.USESHELL :
 
 
 # --- MakeMaker c_o section:
@@ -304,7 +301,7 @@ PASTHRU =
 
 
 # --- MakeMaker top_targets section:
-all :: pure_all
+all :: pure_all manifypods
 	$(NOECHO) $(NOOP)
 
 
@@ -379,20 +376,16 @@ linkext :: $(LINKTYPE)
 
 # --- MakeMaker dlsyms section:
 
-API.def: Makefile.PL
-	$(PERLRUN) -MExtUtils::Mksymlists \
-     -e "Mksymlists('NAME'=>\"WWW::Alexa::API\", 'DLBASE' => '$(BASEEXT)', 'DL_FUNCS' => {  }, 'FUNCLIST' => [], 'IMPORTS' => {  }, 'DL_VARS' => []);"
-
-
-# --- MakeMaker dynamic section:
-
-dynamic :: $(FIRST_MAKEFILE) $(INST_DYNAMIC) $(INST_BOOT)
-	$(NOECHO) $(NOOP)
-
 
 # --- MakeMaker dynamic_bs section:
 
 BOOTSTRAP =
+
+
+# --- MakeMaker dynamic section:
+
+dynamic :: $(FIRST_MAKEFILE) $(BOOTSTRAP) $(INST_DYNAMIC)
+	$(NOECHO) $(NOOP)
 
 
 # --- MakeMaker dynamic_lib section:
@@ -415,8 +408,10 @@ POD2MAN_EXE = $(PERLRUN) "-MExtUtils::Command::MM" -e pod2man "--"
 POD2MAN = $(POD2MAN_EXE)
 
 
-manifypods : pure_all 
-	$(NOECHO) $(NOOP)
+manifypods : pure_all  \
+	lib/WWW/Alexa/API.pm
+	$(NOECHO) $(POD2MAN) --section=3 --perm_rw=$(PERM_RW) \
+	  lib/WWW/Alexa/API.pm $(INST_MAN3DIR)/WWW::Alexa::API.$(MAN3EXT) 
 
 
 
@@ -443,26 +438,25 @@ clean_subdirs :
 
 clean :: clean_subdirs
 	- $(RM_F) \
-	  core.[0-9] perl.exe \
-	  $(BASEEXT).exp *$(OBJ_EXT) \
-	  $(BASEEXT).bso core.[0-9][0-9][0-9] \
-	  pm_to_blib $(INST_ARCHAUTODIR)\extralibs.ld \
-	  blibdirs.ts core \
-	  $(INST_ARCHAUTODIR)\extralibs.all perl \
-	  MYMETA.json $(MAKE_APERL_FILE) \
-	  *$(LIB_EXT) tmon.out \
-	  MYMETA.yml lib$(BASEEXT).def \
-	  $(BOOTSTRAP) perlmain.c \
-	  pm_to_blib.ts perl$(EXE_EXT) \
-	  mon.out core.[0-9][0-9] \
-	  so_locations core.[0-9][0-9][0-9][0-9] \
-	  $(BASEEXT).def *perl.core \
-	  core.[0-9][0-9][0-9][0-9][0-9] core.*perl.*.? \
-	  $(BASEEXT).x 
+	  $(BASEEXT).bso $(BASEEXT).def \
+	  $(BASEEXT).exp $(BASEEXT).x \
+	  $(BOOTSTRAP) $(INST_ARCHAUTODIR)/extralibs.all \
+	  $(INST_ARCHAUTODIR)/extralibs.ld $(MAKE_APERL_FILE) \
+	  *$(LIB_EXT) *$(OBJ_EXT) \
+	  *perl.core MYMETA.json \
+	  MYMETA.yml blibdirs.ts \
+	  core core.*perl.*.? \
+	  core.[0-9] core.[0-9][0-9] \
+	  core.[0-9][0-9][0-9] core.[0-9][0-9][0-9][0-9] \
+	  core.[0-9][0-9][0-9][0-9][0-9] lib$(BASEEXT).def \
+	  mon.out perl \
+	  perl$(EXE_EXT) perl.exe \
+	  perlmain.c pm_to_blib \
+	  pm_to_blib.ts so_locations \
+	  tmon.out 
 	- $(RM_RF) \
-	  dll.base WWW-Alexa-API-* \
-	  dll.exp blib 
-	- $(NOECHO) $(RM_F) $(MAKEFILE_OLD)
+	  blib 
+	  $(NOECHO) $(RM_F) $(MAKEFILE_OLD)
 	- $(MV) $(FIRST_MAKEFILE) $(MAKEFILE_OLD) $(DEV_NULL)
 
 
@@ -475,7 +469,7 @@ realclean_subdirs :
 # Delete temporary files (via clean) and also delete dist files
 realclean purge ::  clean realclean_subdirs
 	- $(RM_F) \
-	  $(FIRST_MAKEFILE) $(MAKEFILE_OLD) 
+	  $(MAKEFILE_OLD) $(FIRST_MAKEFILE) 
 	- $(RM_RF) \
 	  $(DISTVNAME) 
 
@@ -483,73 +477,75 @@ realclean purge ::  clean realclean_subdirs
 # --- MakeMaker metafile section:
 metafile : create_distdir
 	$(NOECHO) $(ECHO) Generating META.yml
-	$(NOECHO) $(ECHO) --- > META_new.yml
-	$(NOECHO) $(ECHO) "abstract: 'Query Alexa.com for Traffic information of website.'" >> META_new.yml
-	$(NOECHO) $(ECHO) author: >> META_new.yml
-	$(NOECHO) $(ECHO) "  - 'Rijvi Rajib <me@rij.co>'" >> META_new.yml
-	$(NOECHO) $(ECHO) build_requires: >> META_new.yml
-	$(NOECHO) $(ECHO) "  Test::More: 0" >> META_new.yml
-	$(NOECHO) $(ECHO) configure_requires: >> META_new.yml
-	$(NOECHO) $(ECHO) "  ExtUtils::MakeMaker: 0" >> META_new.yml
-	$(NOECHO) $(ECHO) "dynamic_config: 1" >> META_new.yml
-	$(NOECHO) $(ECHO) "generated_by: 'ExtUtils::MakeMaker version 6.72, CPAN::Meta::Converter version 2.132140'" >> META_new.yml
-	$(NOECHO) $(ECHO) "license: unknown" >> META_new.yml
-	$(NOECHO) $(ECHO) meta-spec: >> META_new.yml
-	$(NOECHO) $(ECHO) "  url: http://module-build.sourceforge.net/META-spec-v1.4.html" >> META_new.yml
-	$(NOECHO) $(ECHO) "  version: 1.4" >> META_new.yml
-	$(NOECHO) $(ECHO) "name: WWW-Alexa-API" >> META_new.yml
-	$(NOECHO) $(ECHO) no_index: >> META_new.yml
-	$(NOECHO) $(ECHO) "  directory:" >> META_new.yml
-	$(NOECHO) $(ECHO) "    - t" >> META_new.yml
-	$(NOECHO) $(ECHO) "    - inc" >> META_new.yml
-	$(NOECHO) $(ECHO) requires: >> META_new.yml
-	$(NOECHO) $(ECHO) "  XML::Hash::LX: 0.0603" >> META_new.yml
-	$(NOECHO) $(ECHO) "  perl: 5.006" >> META_new.yml
-	$(NOECHO) $(ECHO) "version: 0.01" >> META_new.yml
+	$(NOECHO) $(ECHO) '---' > META_new.yml
+	$(NOECHO) $(ECHO) 'abstract: '\''A class implementation interface for querying Alexa.com for Traffic information.'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'author:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  - '\''Rijvi Rajib (cpan@rij.co)'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'build_requires:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: 0' >> META_new.yml
+	$(NOECHO) $(ECHO) 'configure_requires:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  ExtUtils::MakeMaker: 0' >> META_new.yml
+	$(NOECHO) $(ECHO) 'dynamic_config: 1' >> META_new.yml
+	$(NOECHO) $(ECHO) 'generated_by: '\''ExtUtils::MakeMaker version 6.84, CPAN::Meta::Converter version 2.133380'\''' >> META_new.yml
+	$(NOECHO) $(ECHO) 'license: unknown' >> META_new.yml
+	$(NOECHO) $(ECHO) 'meta-spec:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  url: http://module-build.sourceforge.net/META-spec-v1.4.html' >> META_new.yml
+	$(NOECHO) $(ECHO) '  version: 1.4' >> META_new.yml
+	$(NOECHO) $(ECHO) 'name: WWW-Alexa-API' >> META_new.yml
+	$(NOECHO) $(ECHO) 'no_index:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  directory:' >> META_new.yml
+	$(NOECHO) $(ECHO) '    - t' >> META_new.yml
+	$(NOECHO) $(ECHO) '    - inc' >> META_new.yml
+	$(NOECHO) $(ECHO) 'requires:' >> META_new.yml
+	$(NOECHO) $(ECHO) '  LWP::UserAgent: 6' >> META_new.yml
+	$(NOECHO) $(ECHO) '  Test::Simple: 0.44' >> META_new.yml
+	$(NOECHO) $(ECHO) '  XML::Hash::LX: 0.0603' >> META_new.yml
+	$(NOECHO) $(ECHO) 'version: 0.01' >> META_new.yml
 	-$(NOECHO) $(MV) META_new.yml $(DISTVNAME)/META.yml
 	$(NOECHO) $(ECHO) Generating META.json
-	$(NOECHO) $(ECHO) {{ > META_new.json
-	$(NOECHO) $(ECHO) "   \"abstract\" : \"Query Alexa.com for Traffic information of website.\"," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"author\" : [" >> META_new.json
-	$(NOECHO) $(ECHO) "      \"Rijvi Rajib ^<me^@rij.co^>\"" >> META_new.json
-	$(NOECHO) $(ECHO) "   ]," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"dynamic_config\" : 1," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"generated_by\" : \"ExtUtils::MakeMaker version 6.72, CPAN::Meta::Converter version 2.132140\"," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"license\" : [" >> META_new.json
-	$(NOECHO) $(ECHO) "      \"unknown\"" >> META_new.json
-	$(NOECHO) $(ECHO) "   ]," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"meta-spec\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "      \"url\" : \"http://search.cpan.org/perldoc?CPAN::Meta::Spec\"," >> META_new.json
-	$(NOECHO) $(ECHO) "      \"version\" : \"2\"" >> META_new.json
-	$(NOECHO) $(ECHO) "   }}," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"name\" : \"WWW-Alexa-API\"," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"no_index\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "      \"directory\" : [" >> META_new.json
-	$(NOECHO) $(ECHO) "         \"t\"," >> META_new.json
-	$(NOECHO) $(ECHO) "         \"inc\"" >> META_new.json
-	$(NOECHO) $(ECHO) "      ]" >> META_new.json
-	$(NOECHO) $(ECHO) "   }}," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"prereqs\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "      \"build\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "         \"requires\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "            \"Test::More\" : \"0\"" >> META_new.json
-	$(NOECHO) $(ECHO) "         }}" >> META_new.json
-	$(NOECHO) $(ECHO) "      }}," >> META_new.json
-	$(NOECHO) $(ECHO) "      \"configure\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "         \"requires\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "            \"ExtUtils::MakeMaker\" : \"0\"" >> META_new.json
-	$(NOECHO) $(ECHO) "         }}" >> META_new.json
-	$(NOECHO) $(ECHO) "      }}," >> META_new.json
-	$(NOECHO) $(ECHO) "      \"runtime\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "         \"requires\" : {{" >> META_new.json
-	$(NOECHO) $(ECHO) "            \"XML::Hash::LX\" : \"0.0603\"," >> META_new.json
-	$(NOECHO) $(ECHO) "            \"perl\" : \"5.006\"" >> META_new.json
-	$(NOECHO) $(ECHO) "         }}" >> META_new.json
-	$(NOECHO) $(ECHO) "      }}" >> META_new.json
-	$(NOECHO) $(ECHO) "   }}," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"release_status\" : \"stable\"," >> META_new.json
-	$(NOECHO) $(ECHO) "   \"version\" : \"0.01\"" >> META_new.json
-	$(NOECHO) $(ECHO) }} >> META_new.json
+	$(NOECHO) $(ECHO) '{' > META_new.json
+	$(NOECHO) $(ECHO) '   "abstract" : "A class implementation interface for querying Alexa.com for Traffic information.",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "author" : [' >> META_new.json
+	$(NOECHO) $(ECHO) '      "Rijvi Rajib (cpan@rij.co)"' >> META_new.json
+	$(NOECHO) $(ECHO) '   ],' >> META_new.json
+	$(NOECHO) $(ECHO) '   "dynamic_config" : 1,' >> META_new.json
+	$(NOECHO) $(ECHO) '   "generated_by" : "ExtUtils::MakeMaker version 6.84, CPAN::Meta::Converter version 2.133380",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "license" : [' >> META_new.json
+	$(NOECHO) $(ECHO) '      "unknown"' >> META_new.json
+	$(NOECHO) $(ECHO) '   ],' >> META_new.json
+	$(NOECHO) $(ECHO) '   "meta-spec" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",' >> META_new.json
+	$(NOECHO) $(ECHO) '      "version" : "2"' >> META_new.json
+	$(NOECHO) $(ECHO) '   },' >> META_new.json
+	$(NOECHO) $(ECHO) '   "name" : "WWW-Alexa-API",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "no_index" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '      "directory" : [' >> META_new.json
+	$(NOECHO) $(ECHO) '         "t",' >> META_new.json
+	$(NOECHO) $(ECHO) '         "inc"' >> META_new.json
+	$(NOECHO) $(ECHO) '      ]' >> META_new.json
+	$(NOECHO) $(ECHO) '   },' >> META_new.json
+	$(NOECHO) $(ECHO) '   "prereqs" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '      "build" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker" : "0"' >> META_new.json
+	$(NOECHO) $(ECHO) '         }' >> META_new.json
+	$(NOECHO) $(ECHO) '      },' >> META_new.json
+	$(NOECHO) $(ECHO) '      "configure" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '            "ExtUtils::MakeMaker" : "0"' >> META_new.json
+	$(NOECHO) $(ECHO) '         }' >> META_new.json
+	$(NOECHO) $(ECHO) '      },' >> META_new.json
+	$(NOECHO) $(ECHO) '      "runtime" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '         "requires" : {' >> META_new.json
+	$(NOECHO) $(ECHO) '            "LWP::UserAgent" : "6",' >> META_new.json
+	$(NOECHO) $(ECHO) '            "Test::Simple" : "0.44",' >> META_new.json
+	$(NOECHO) $(ECHO) '            "XML::Hash::LX" : "0.0603"' >> META_new.json
+	$(NOECHO) $(ECHO) '         }' >> META_new.json
+	$(NOECHO) $(ECHO) '      }' >> META_new.json
+	$(NOECHO) $(ECHO) '   },' >> META_new.json
+	$(NOECHO) $(ECHO) '   "release_status" : "stable",' >> META_new.json
+	$(NOECHO) $(ECHO) '   "version" : "0.01"' >> META_new.json
+	$(NOECHO) $(ECHO) '}' >> META_new.json
 	-$(NOECHO) $(MV) META_new.json $(DISTVNAME)/META.json
 
 
@@ -579,8 +575,8 @@ veryclean : realclean
 # --- MakeMaker dist_core section:
 
 dist : $(DIST_DEFAULT) $(FIRST_MAKEFILE)
-	$(NOECHO) $(ABSPERLRUN) -l -e "print 'Warning: Makefile possibly out of date with $(VERSION_FROM)'\
-    if -e '$(VERSION_FROM)' and -M '$(VERSION_FROM)' < -M '$(FIRST_MAKEFILE)';" --
+	$(NOECHO) $(ABSPERLRUN) -l -e 'print '\''Warning: Makefile possibly out of date with $(VERSION_FROM)'\''' \
+	  -e '    if -e '\''$(VERSION_FROM)'\'' and -M '\''$(VERSION_FROM)'\'' < -M '\''$(FIRST_MAKEFILE)'\'';' --
 
 tardist : $(DISTVNAME).tar$(SUFFIX)
 	$(NOECHO) $(NOOP)
@@ -646,19 +642,19 @@ ci :
 
 # --- MakeMaker distmeta section:
 distmeta : create_distdir metafile
-	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e "exit unless -e q{{META.yml}};\
-eval {{ maniadd({{q{{META.yml}} => q{{Module YAML meta-data (added by MakeMaker)}}}}) }}\
-    or print \"Could not add META.yml to MANIFEST: $$$${{'^@'}}\n\"" --
-	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e "exit unless -f q{{META.json}};\
-eval {{ maniadd({{q{{META.json}} => q{{Module JSON meta-data (added by MakeMaker)}}}}) }}\
-    or print \"Could not add META.json to MANIFEST: $$$${{'^@'}}\n\"" --
+	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'exit unless -e q{META.yml};' \
+	  -e 'eval { maniadd({q{META.yml} => q{Module YAML meta-data (added by MakeMaker)}}) }' \
+	  -e '    or print "Could not add META.yml to MANIFEST: $$$${'\''@'\''}\n"' --
+	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'exit unless -f q{META.json};' \
+	  -e 'eval { maniadd({q{META.json} => q{Module JSON meta-data (added by MakeMaker)}}) }' \
+	  -e '    or print "Could not add META.json to MANIFEST: $$$${'\''@'\''}\n"' --
 
 
 
 # --- MakeMaker distsignature section:
 distsignature : create_distdir
-	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e "eval {{ maniadd({{q{{SIGNATURE}} => q{{Public-key signature (added by MakeMaker)}}}}) }}\
-    or print \"Could not add SIGNATURE to MANIFEST: $$$${{'^@'}}\n\"" --
+	$(NOECHO) cd $(DISTVNAME) && $(ABSPERLRUN) -MExtUtils::Manifest=maniadd -e 'eval { maniadd({q{SIGNATURE} => q{Public-key signature (added by MakeMaker)}}) }' \
+	  -e '    or print "Could not add SIGNATURE to MANIFEST: $$$${'\''@'\''}\n"' --
 	$(NOECHO) cd $(DISTVNAME) && $(TOUCH) SIGNATURE
 	cd $(DISTVNAME) && cpansign -s
 
@@ -692,8 +688,8 @@ doc__install : doc_site_install
 
 pure_perl_install :: all
 	$(NOECHO) $(MOD_INSTALL) \
-		read $(PERL_ARCHLIB)\auto\$(FULLEXT)\.packlist \
-		write $(DESTINSTALLARCHLIB)\auto\$(FULLEXT)\.packlist \
+		read $(PERL_ARCHLIB)/auto/$(FULLEXT)/.packlist \
+		write $(DESTINSTALLARCHLIB)/auto/$(FULLEXT)/.packlist \
 		$(INST_LIB) $(DESTINSTALLPRIVLIB) \
 		$(INST_ARCHLIB) $(DESTINSTALLARCHLIB) \
 		$(INST_BIN) $(DESTINSTALLBIN) \
@@ -701,13 +697,13 @@ pure_perl_install :: all
 		$(INST_MAN1DIR) $(DESTINSTALLMAN1DIR) \
 		$(INST_MAN3DIR) $(DESTINSTALLMAN3DIR)
 	$(NOECHO) $(WARN_IF_OLD_PACKLIST) \
-		$(SITEARCHEXP)\auto\$(FULLEXT)
+		$(SITEARCHEXP)/auto/$(FULLEXT)
 
 
 pure_site_install :: all
 	$(NOECHO) $(MOD_INSTALL) \
-		read $(SITEARCHEXP)\auto\$(FULLEXT)\.packlist \
-		write $(DESTINSTALLSITEARCH)\auto\$(FULLEXT)\.packlist \
+		read $(SITEARCHEXP)/auto/$(FULLEXT)/.packlist \
+		write $(DESTINSTALLSITEARCH)/auto/$(FULLEXT)/.packlist \
 		$(INST_LIB) $(DESTINSTALLSITELIB) \
 		$(INST_ARCHLIB) $(DESTINSTALLSITEARCH) \
 		$(INST_BIN) $(DESTINSTALLSITEBIN) \
@@ -715,18 +711,19 @@ pure_site_install :: all
 		$(INST_MAN1DIR) $(DESTINSTALLSITEMAN1DIR) \
 		$(INST_MAN3DIR) $(DESTINSTALLSITEMAN3DIR)
 	$(NOECHO) $(WARN_IF_OLD_PACKLIST) \
-		$(PERL_ARCHLIB)\auto\$(FULLEXT)
+		$(PERL_ARCHLIB)/auto/$(FULLEXT)
 
 pure_vendor_install :: all
 	$(NOECHO) $(MOD_INSTALL) \
-		read $(VENDORARCHEXP)\auto\$(FULLEXT)\.packlist \
-		write $(DESTINSTALLVENDORARCH)\auto\$(FULLEXT)\.packlist \
+		read $(VENDORARCHEXP)/auto/$(FULLEXT)/.packlist \
+		write $(DESTINSTALLVENDORARCH)/auto/$(FULLEXT)/.packlist \
 		$(INST_LIB) $(DESTINSTALLVENDORLIB) \
 		$(INST_ARCHLIB) $(DESTINSTALLVENDORARCH) \
 		$(INST_BIN) $(DESTINSTALLVENDORBIN) \
 		$(INST_SCRIPT) $(DESTINSTALLVENDORSCRIPT) \
 		$(INST_MAN1DIR) $(DESTINSTALLVENDORMAN1DIR) \
 		$(INST_MAN3DIR) $(DESTINSTALLVENDORMAN3DIR)
+
 
 doc_perl_install :: all
 	$(NOECHO) $(ECHO) Appending installation info to $(DESTINSTALLARCHLIB)/perllocal.pod
@@ -737,7 +734,7 @@ doc_perl_install :: all
 		LINKTYPE "$(LINKTYPE)" \
 		VERSION "$(VERSION)" \
 		EXE_FILES "$(EXE_FILES)" \
-		>> $(DESTINSTALLARCHLIB)\perllocal.pod
+		>> $(DESTINSTALLARCHLIB)/perllocal.pod
 
 doc_site_install :: all
 	$(NOECHO) $(ECHO) Appending installation info to $(DESTINSTALLARCHLIB)/perllocal.pod
@@ -748,7 +745,7 @@ doc_site_install :: all
 		LINKTYPE "$(LINKTYPE)" \
 		VERSION "$(VERSION)" \
 		EXE_FILES "$(EXE_FILES)" \
-		>> $(DESTINSTALLARCHLIB)\perllocal.pod
+		>> $(DESTINSTALLARCHLIB)/perllocal.pod
 
 doc_vendor_install :: all
 	$(NOECHO) $(ECHO) Appending installation info to $(DESTINSTALLARCHLIB)/perllocal.pod
@@ -759,20 +756,20 @@ doc_vendor_install :: all
 		LINKTYPE "$(LINKTYPE)" \
 		VERSION "$(VERSION)" \
 		EXE_FILES "$(EXE_FILES)" \
-		>> $(DESTINSTALLARCHLIB)\perllocal.pod
+		>> $(DESTINSTALLARCHLIB)/perllocal.pod
 
 
 uninstall :: uninstall_from_$(INSTALLDIRS)dirs
 	$(NOECHO) $(NOOP)
 
 uninstall_from_perldirs ::
-	$(NOECHO) $(UNINSTALL) $(PERL_ARCHLIB)\auto\$(FULLEXT)\.packlist
+	$(NOECHO) $(UNINSTALL) $(PERL_ARCHLIB)/auto/$(FULLEXT)/.packlist
 
 uninstall_from_sitedirs ::
-	$(NOECHO) $(UNINSTALL) $(SITEARCHEXP)\auto\$(FULLEXT)\.packlist
+	$(NOECHO) $(UNINSTALL) $(SITEARCHEXP)/auto/$(FULLEXT)/.packlist
 
 uninstall_from_vendordirs ::
-	$(NOECHO) $(UNINSTALL) $(VENDORARCHEXP)\auto\$(FULLEXT)\.packlist
+	$(NOECHO) $(UNINSTALL) $(VENDORARCHEXP)/auto/$(FULLEXT)/.packlist
 
 
 # --- MakeMaker force section:
@@ -804,7 +801,7 @@ $(FIRST_MAKEFILE) : Makefile.PL $(CONFIGDEP)
 
 # --- MakeMaker makeaperl section ---
 MAP_TARGET    = perl
-FULLPERL      = C:\Perl\perl\bin\perl.exe
+FULLPERL      = /usr/bin/perl
 
 $(MAP_TARGET) :: static $(MAKE_APERL_FILE)
 	$(MAKE) $(USEMAKEFILE) $(MAKE_APERL_FILE) $@
@@ -834,10 +831,10 @@ subdirs-test ::
 
 
 test_dynamic :: pure_all
-	$(FULLPERLRUN) "-MExtUtils::Command::MM" "-e" "test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
+	PERL_DL_NONLAZY=1 $(FULLPERLRUN) "-MExtUtils::Command::MM" "-MTest::Harness" "-e" "undef *Test::Harness::Switches; test_harness($(TEST_VERBOSE), '$(INST_LIB)', '$(INST_ARCHLIB)')" $(TEST_FILES)
 
 testdb_dynamic :: pure_all
-	$(FULLPERLRUN) $(TESTDB_SW) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
+	PERL_DL_NONLAZY=1 $(FULLPERLRUN) $(TESTDB_SW) "-I$(INST_LIB)" "-I$(INST_ARCHLIB)" $(TEST_FILE)
 
 test_ : test_dynamic
 
@@ -848,23 +845,24 @@ testdb_static :: testdb_dynamic
 # --- MakeMaker ppd section:
 # Creates a PPD (Perl Package Description) for a binary distribution.
 ppd :
-	$(NOECHO) $(ECHO) "<SOFTPKG NAME=\"$(DISTNAME)\" VERSION=\"$(VERSION)\">" > $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "    <ABSTRACT>Query Alexa.com for Traffic information of website.</ABSTRACT>" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "    <AUTHOR>Rijvi Rajib &lt;me@rij.co&gt;</AUTHOR>" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "    <IMPLEMENTATION>" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "        <PERLCORE VERSION=\"5,006,0,0\" />" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "        <REQUIRE NAME=\"XML::Hash::LX\" VERSION=\"0.0603\" />" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "        <ARCHITECTURE NAME=\"MSWin32-x64-multi-thread-5.18\" />" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "        <CODEBASE HREF=\"\" />" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) "    </IMPLEMENTATION>" >> $(DISTNAME).ppd
-	$(NOECHO) $(ECHO) ^</SOFTPKG^> >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '<SOFTPKG NAME="$(DISTNAME)" VERSION="$(VERSION)">' > $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <ABSTRACT>A class implementation interface for querying Alexa.com for Traffic information.</ABSTRACT>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <AUTHOR>Rijvi Rajib (cpan@rij.co)</AUTHOR>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    <IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="LWP::UserAgent" VERSION="6" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="Test::Simple" VERSION="0.44" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <REQUIRE NAME="XML::Hash::LX" VERSION="0.0603" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <ARCHITECTURE NAME="i686-linux-gnu-thread-multi-64int-5.14" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '        <CODEBASE HREF="" />' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '    </IMPLEMENTATION>' >> $(DISTNAME).ppd
+	$(NOECHO) $(ECHO) '</SOFTPKG>' >> $(DISTNAME).ppd
 
 
 # --- MakeMaker pm_to_blib section:
 
 pm_to_blib : $(FIRST_MAKEFILE) $(TO_INST_PM)
-	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e "pm_to_blib({{@ARGV}}, '$(INST_LIB)\auto', q[$(PM_FILTER)], '$(PERM_DIR)')" -- \
-	  lib/WWW/Alexa/API.pm blib\lib\WWW\Alexa\API.pm 
+	$(NOECHO) $(ABSPERLRUN) -MExtUtils::Install -e 'pm_to_blib({@ARGV}, '\''$(INST_LIB)/auto'\'', q[$(PM_FILTER)], '\''$(PERM_DIR)'\'')' -- \
+	  lib/WWW/Alexa/API.pm blib/lib/WWW/Alexa/API.pm 
 	$(NOECHO) $(TOUCH) pm_to_blib
 
 
