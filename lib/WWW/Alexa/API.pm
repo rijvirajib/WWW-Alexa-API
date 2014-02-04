@@ -68,24 +68,23 @@ use its method to get(), to query information for a domain.
 
 =head1 USAGE
 
-my $alexa = WWW::Alexa::API->new(%options);
-my $alexa_response = $alexa->get('alexa.com');
-my $alexa_rank = $alexa_response->{SD}[1]->{POPULARITY}->{-TEXT};
-if (defined $alexa_response->{DMOZ}) {
-  ## Has DMOZ
-}
+  my $alexa = WWW::Alexa::API->new(%options);
+  my $alexa_response = $alexa->get('alexa.com');
+  my $alexa_rank = $alexa_response->{SD}[1]->{POPULARITY}->{-TEXT};
+  if (defined $alexa_response->{DMOZ}) {
+    ## Has DMOZ
+  }
 
 This method constructs a new C<WWW::Alexa::API> object and returns it.
 Key/value pair arguments can be provided to set up an initial user agent.
 The following options allow specific attributes for C<LWP::UserAgent>
 
-KEY DEFAULT
------------- --------------------
-agent "Opera 10.0"
-proxy undef
-timeout undef
-ip_address undef
-
+  KEY DEFAULT
+  ------------ --------------------
+  agent "Opera 10.0"
+  proxy undef
+  timeout undef
+  ip_address undef
 
 C<agent> specifies the header 'User-Agent' when querying Alexa. If
 the C<proxy> option is passed in, requests will be made through
@@ -94,183 +93,183 @@ C<ip_address> allows you to set an X-Real-IP header for C<LWP::UserAgent>.
 
 =head1 OUTPUT
 
-$VAR1 = {
-  '-URL' => 'alexa.com/',
-  '-VER' => '0.9',
-  '-HOME' => '0',
-  '-IDN' => 'alexa.com/',
-  'RLS' => {
-    'RL' => [
-      {
-        '-TITLE' => 'Open Directory Project',
-        '-HREF' => 'dmoz.org/'
-      }, {
-        '-TITLE' => 'Internet Archive',
-        '-HREF' => 'archive.org/'
-      }, {
-        '-TITLE' => 'Wiki - AboutUs Wiki Page',
-        '-HREF' => 'aboutus.org/'
-      }, {
-        '-TITLE' => 'Ask.com',
-        '-HREF' => 'www.ask.com/'
-      }, {
-        '-TITLE' => 'StatCounter.com',
-        'HREF' => 'statcounter.com/'
-      }, {
-        '-TITLE' => 'Statbrain.com',
-        '-HREF' => 'statbrain.com/'
-      }, {
-        '-TITLE' => 'SiteSell.com',
-        '-HREF' => 'sitesell.com/'
-      }, {
-        '-TITLE' => 'Site Meter - Counter And Statistics Tracker',
-        '-HREF' => 'sitemeter.com/'
-      }, {
-        '-TITLE' => "\x{631}\x{62a}\x{628}: \x{62a}\x{631}\x{62a}\x{64a}\x{628} \x{627}\x{644}\x{645}\x{648}\x{627}\x{642}\x{639} \x{627}\x{644}\x{639}\x{631}\x{628}\x{64a}\x{629}",
-        '-HREF' => 'ratteb.com/'
-      }, {
-        '-TITLE' => 'Quantcast',
-        '-HREF' => 'quantcast.com/'
-      }, {
-        '-TITLE' => 'www.amazon.com/',
-        '-HREF' => 'www.amazon.com/'
-      }
-    ],
-   '-more' => '65',
-   '-PREFIX' => 'http://'
-  },
-  '-AID' => '=',
-  'KEYWORDS' => {
-    'KEYWORD' => [
-      { 
-        '-VAL' => 'Opportunities' 
-      }, {
-        '-VAL' => 'Partners Programs'
-      }, {
-        '-VAL' => 'Amazon Associates Program'
-      }
-    ]
-  },
-  'DMOZ' => {
-    'SITE' => {
-      '-DESC' => 'Alexa is the leading provider of free, global web metrics. Search Alexa to discover the most successful sites on the web by keyword, category, or country. Use our analytics for competitive analysis, benchmarking, market research, or business development. Use Alexa\'s Pro tools to optimize your company\'s presence on the web.',
-      '-TITLE' => 'Alexa Internet',
-      '-BASE' => 'alexa.com/',
-      'CATS' => {
-        'CAT' => {
-          '-ID' => 'Top/Computers/Internet/Statistics_and_Demographics/Internet_Traffic',
-          '-CID' => '374841',
-          '-TITLE' => 'Statistics and Demographics/Internet Traffic'
-        }
-      }
-    }
-  },
-  'SD' => [
-    {
-      'COUNTRY' => {
-        '-CODE' => 'US'
-      },
-      '-TITLE' => 'A',
-      '-FLAGS' => 'DMOZ',
-      'CHILD' => {
-        '-SRATING' => '0'
-      },
-      'SPEED' => {
-        '-TEXT' => '1611',
-        '-PCT' => '52'
-      },
-      'LINKSIN' => {
-        '-NUM' => '358113'
-      },
-      'ASSOCS' => {
-        'ASSOC' => {
-          '-ID' => 'alexashopping-9'
-        }
-      },
-      'CREATED' => {
-        '-MONTH' => '07',
-        '-DAY' => '17',
-        '-YEAR' => '1996',
-        '-DATE' => '17-Jul-1996'
-      },
-      'CERTIFIED' => {
-        '-DATE' => '2013-12-03T00:00:03Z'
-      },
-      'ADDR' => {
-        '-COUNTRY' => 'USA',
-        '-ZIP' => '94129',
-        '-STATE' => 'CA',
-        '-CITY' => 'San Francisco',
-        '-STREET' => 'Presidio of San Francisco,  PO Box 29141'
-      },
-      'LANG' => {
-        '-LEX' => 'en'
-      },
-      'SITEDATA' => {
-        '-DISPLAY' => '7'
-      },
-      'REVIEWS' => {
-        '-NUM' => '939',
-        '-AVG' => '4.5'
-      },
-      'CLAIMED' => {
-        '-DATE' => '2013-12-06T11:00:10Z'
-      },
-      'TICKER' => {
-        '-SYMBOL' => 'AMZN'
-      },
-      'ALEXAPRO' => {
-        '-TIER' => 'advanced'
-      },
-      'LINK' => [
+  $VAR1 = {
+    '-URL' => 'alexa.com/',
+    '-VER' => '0.9',
+    '-HOME' => '0',
+    '-IDN' => 'alexa.com/',
+    'RLS' => {
+      'RL' => [
         {
-          '-NUM' => '1',
-          '-TEXT' => 'Alexa Products',
-          '-URL' => 'http://www.alexa.com/products'
-        },
-        {
-          '-NUM' => '2',
-          '-TEXT' => 'Alexa Toolbar Creator',
-          '-URL' => 'http://www.alexa.com/toolbar-creator'
+          '-TITLE' => 'Open Directory Project',
+          '-HREF' => 'dmoz.org/'
+        }, {
+          '-TITLE' => 'Internet Archive',
+          '-HREF' => 'archive.org/'
+        }, {
+          '-TITLE' => 'Wiki - AboutUs Wiki Page',
+          '-HREF' => 'aboutus.org/'
+        }, {
+          '-TITLE' => 'Ask.com',
+          '-HREF' => 'www.ask.com/'
+        }, {
+          '-TITLE' => 'StatCounter.com',
+          'HREF' => 'statcounter.com/'
+        }, {
+          '-TITLE' => 'Statbrain.com',
+          '-HREF' => 'statbrain.com/'
+        }, {
+          '-TITLE' => 'SiteSell.com',
+          '-HREF' => 'sitesell.com/'
+        }, {
+          '-TITLE' => 'Site Meter - Counter And Statistics Tracker',
+          '-HREF' => 'sitemeter.com/'
+        }, {
+          '-TITLE' => "\x{631}\x{62a}\x{628}: \x{62a}\x{631}\x{62a}\x{64a}\x{628} \x{627}\x{644}\x{645}\x{648}\x{627}\x{642}\x{639} \x{627}\x{644}\x{639}\x{631}\x{628}\x{64a}\x{629}",
+          '-HREF' => 'ratteb.com/'
+        }, {
+          '-TITLE' => 'Quantcast',
+          '-HREF' => 'quantcast.com/'
+        }, {
+          '-TITLE' => 'www.amazon.com/',
+          '-HREF' => 'www.amazon.com/'
         }
       ],
-      '-HOST' => 'alexa.com',
-      'EMAIL' => {
-        '-ADDR' => 'Alexa Internet'
-      },
-      'TITLE' => {
-        '-TEXT' => 'Alexa Internet'
-      },
-      'LOGO' => {
-        '-URL' => 'http://s3.amazonaws.com/com.alexa.data/fr_logo_url/205_4c67c060c607f3c93208e7d0f3aa00d1.png'
-      },
-      'OWNER' => {
-        '-NAME' => 'Alexa Internet'
-      },
-      'PHONE' => {
-        '-NUMBER' => 'unlisted'
+     '-more' => '65',
+     '-PREFIX' => 'http://'
+    },
+    '-AID' => '=',
+    'KEYWORDS' => {
+      'KEYWORD' => [
+        { 
+          '-VAL' => 'Opportunities' 
+        }, {
+          '-VAL' => 'Partners Programs'
+        }, {
+          '-VAL' => 'Amazon Associates Program'
+        }
+      ]
+    },
+    'DMOZ' => {
+      'SITE' => {
+        '-DESC' => 'Alexa is the leading provider of free, global web metrics. Search Alexa to discover the most successful sites on the web by keyword, category, or country. Use our analytics for competitive analysis, benchmarking, market research, or business development. Use Alexa\'s Pro tools to optimize your company\'s presence on the web.',
+        '-TITLE' => 'Alexa Internet',
+        '-BASE' => 'alexa.com/',
+        'CATS' => {
+          'CAT' => {
+            '-ID' => 'Top/Computers/Internet/Statistics_and_Demographics/Internet_Traffic',
+            '-CID' => '374841',
+            '-TITLE' => 'Statistics and Demographics/Internet Traffic'
+          }
+        }
       }
     },
-    {
-      'COUNTRY' => {
-        '-RANK' => '1700',
-        '-NAME' => 'United States',
-        '-CODE' => 'US'
+    'SD' => [
+      {
+        'COUNTRY' => {
+          '-CODE' => 'US'
+        },
+        '-TITLE' => 'A',
+        '-FLAGS' => 'DMOZ',
+        'CHILD' => {
+          '-SRATING' => '0'
+        },
+        'SPEED' => {
+          '-TEXT' => '1611',
+          '-PCT' => '52'
+        },
+        'LINKSIN' => {
+          '-NUM' => '358113'
+        },
+        'ASSOCS' => {
+          'ASSOC' => {
+            '-ID' => 'alexashopping-9'
+          }
+        },
+        'CREATED' => {
+          '-MONTH' => '07',
+          '-DAY' => '17',
+          '-YEAR' => '1996',
+          '-DATE' => '17-Jul-1996'
+        },
+        'CERTIFIED' => {
+          '-DATE' => '2013-12-03T00:00:03Z'
+        },
+        'ADDR' => {
+          '-COUNTRY' => 'USA',
+          '-ZIP' => '94129',
+          '-STATE' => 'CA',
+          '-CITY' => 'San Francisco',
+          '-STREET' => 'Presidio of San Francisco,  PO Box 29141'
+        },
+        'LANG' => {
+          '-LEX' => 'en'
+        },
+        'SITEDATA' => {
+          '-DISPLAY' => '7'
+        },
+        'REVIEWS' => {
+          '-NUM' => '939',
+          '-AVG' => '4.5'
+        },
+        'CLAIMED' => {
+          '-DATE' => '2013-12-06T11:00:10Z'
+        },
+        'TICKER' => {
+          '-SYMBOL' => 'AMZN'
+        },
+        'ALEXAPRO' => {
+          '-TIER' => 'advanced'
+        },
+        'LINK' => [
+          {
+            '-NUM' => '1',
+            '-TEXT' => 'Alexa Products',
+            '-URL' => 'http://www.alexa.com/products'
+          },
+          {
+            '-NUM' => '2',
+            '-TEXT' => 'Alexa Toolbar Creator',
+            '-URL' => 'http://www.alexa.com/toolbar-creator'
+          }
+        ],
+        '-HOST' => 'alexa.com',
+        'EMAIL' => {
+          '-ADDR' => 'Alexa Internet'
+        },
+        'TITLE' => {
+          '-TEXT' => 'Alexa Internet'
+        },
+        'LOGO' => {
+          '-URL' => 'http://s3.amazonaws.com/com.alexa.data/fr_logo_url/205_4c67c060c607f3c93208e7d0f3aa00d1.png'
+        },
+        'OWNER' => {
+          '-NAME' => 'Alexa Internet'
+        },
+        'PHONE' => {
+          '-NUMBER' => 'unlisted'
+        }
       },
-      'POPULARITY' => {
-        '-TEXT' => '1502',
-        '-URL' => 'alexa.com/',
-        '-SOURCE' => 'certify'
-      },
-      'REACH' => {
-        '-RANK' => '1458'
-      },
-      'RANK' => {
-        '-DELTA' => '+237'
+      {
+        'COUNTRY' => {
+          '-RANK' => '1700',
+          '-NAME' => 'United States',
+          '-CODE' => 'US'
+        },
+        'POPULARITY' => {
+          '-TEXT' => '1502',
+          '-URL' => 'alexa.com/',
+          '-SOURCE' => 'certify'
+        },
+        'REACH' => {
+          '-RANK' => '1458'
+        },
+        'RANK' => {
+          '-DELTA' => '+237'
+        }
       }
-    }
-  ]
-};
+    ]
+  };
 
 =head1 BUGS
 
