@@ -301,6 +301,8 @@ LICENSE file included with this module.
 
 =head1 SEE ALSO
 
+L<WWW::Alexa::TrafficRank>
+
 perl(1).
 
 =cut
